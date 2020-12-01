@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import FlashCard from '../views/FlashCard';
 import Home from '../views/Home';
 import NotFound from '../views/NotFound';
+import Form from '../views/Form';
 
 export default function Routes() {
   return (
@@ -16,6 +17,11 @@ export default function Routes() {
         exact
         path='/flash-card'
         component={() => <FlashCard />}
+        />
+        <Route
+        exact
+        path='/add-card'
+        component={() => <Form />}
         />
         <Route component={NotFound} />
       </Switch>

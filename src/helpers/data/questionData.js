@@ -9,4 +9,15 @@ const getQuestions = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default { getQuestions };
+const createQuestion = (data) => new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}/questions.json`, data)
+    .then((response) => {
+      const update = { firebaseKey: response.data.name };
+      axios.patch(`${baseUrl}/questions/${response.data.name}.json`, update)
+        .then(() => {
+          resolve(response);
+        });
+    }).catch((error) => reject(error));
+});
+
+export default { getQuestions, createQuestion };

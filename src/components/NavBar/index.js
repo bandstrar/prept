@@ -17,6 +17,9 @@ export default function NavBar() {
             <NavItem>
               <Link className="flash-card" to='/flash-card'>Flash Cards</Link>
             </NavItem>
+            <NavItem>
+              <Link className="add-card" to='/add-card'>Add a Card</Link>
+            </NavItem>
           </Nav>
           </Navbar>
     </StrictMode>
